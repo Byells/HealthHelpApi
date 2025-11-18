@@ -3,6 +3,7 @@ using System;
 using HealthHelp.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 
@@ -11,9 +12,11 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace HealthHelp.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251116045215_Changed_DateOfBirth_To_DateOnly")]
+    partial class Changed_DateOfBirth_To_DateOnly
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,9 +118,8 @@ namespace HealthHelp.Api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("EntryDate")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(10)");
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("TIMESTAMP(7)");
 
                     b.Property<decimal>("Hours")
                         .HasPrecision(5, 2)

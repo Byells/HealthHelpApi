@@ -10,7 +10,7 @@ namespace HealthHelp.Api.Models
         [StringLength(100)]
         public string Name { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public DateOnly DateOfBirth { get; set; }
 
         public virtual ICollection<RoutineEntry> RoutineEntries { get; set; }
     }

@@ -17,7 +17,7 @@ namespace HealthHelp.Api.Models
         public decimal Hours { get; set; } 
 
         [Required]
-        public DateTime EntryDate { get; set; } 
+        public DateOnly EntryDate { get; set; } 
 
         [Required]
         public string ApplicationUserId { get; set; } 

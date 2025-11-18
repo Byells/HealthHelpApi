@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHelp.Api", "HealthHelp.Api\HealthHelp.Api.csproj", "{CA798824-24D6-4DB1-A4EC-E821C4CD6302}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHelp.Tests", "HealthHelp.Tests\HealthHelp.Tests.csproj", "{D605A222-E7B6-496D-8A2D-E03D076D05D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{CA798824-24D6-4DB1-A4EC-E821C4CD6302}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA798824-24D6-4DB1-A4EC-E821C4CD6302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA798824-24D6-4DB1-A4EC-E821C4CD6302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D605A222-E7B6-496D-8A2D-E03D076D05D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D605A222-E7B6-496D-8A2D-E03D076D05D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D605A222-E7B6-496D-8A2D-E03D076D05D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D605A222-E7B6-496D-8A2D-E03D076D05D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
