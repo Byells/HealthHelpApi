@@ -13,6 +13,44 @@ Projeto desenvolvido como parte da avaliação da disciplina de **Enterprise App
 - **Marcos Ramalho - RM554611**
 ---
 
+## Visão do Produto e Planejamento Futuro
+
+O **HealthHelp** não é apenas um CRUD de tarefas; ele foi projetado para ser um **Assistente Pessoal de Saúde Baseado em Dados**.
+
+### O Problema
+A rotina moderna é caótica. As pessoas não sabem se estão trabalhando demais ou dormindo de menos até que o burnout aconteça. Faltam ferramentas que transformem *dados brutos* de rotina em *insights acionáveis*.
+
+### A Solução (HealthHelp)
+Uma plataforma que coleta dados diários e utiliza um **Sistema Especialista (IA Heurística)** para diagnosticar padrões de comportamento nocivos antes que eles se tornem problemas de saúde.
+
+### Roadmap de Evolução (IA & Data Science)
+Atualmente, o sistema utiliza uma lógica heurística avançada. Os próximos passos planejados para a inteligência do sistema são:
+1.  **Coleta de Sentimento:** Adicionar input diário de "Como você se sentiu hoje?" (1-5).
+2.  **Dataset & Treinamento:** Cruzar os dados de *Rotina (Input)* com *Sentimento (Output)* para criar um dataset supervisionado.
+3.  **ML.NET Integration:** Substituir o atual motor de regras (`RoutineAnalyzer`) por um modelo de regressão treinado no ML.NET, capaz de prever dias ruins com base na agenda do usuário e sugerir alterações proativas.
+
+---
+
+## Regras de Negócio
+
+Para garantir a consistência da análise de dados, o sistema impõe regras estritas na entrada de informações:
+
+### 1. Categorias Restritas
+O sistema aceita apenas quatro categorias fundamentais para compor a "Roda da Vida" do usuário. Qualquer tentativa de cadastro fora destes termos resultará em erro `400 Bad Request`.
+
+| Categoria | Descrição / Objetivo da Análise |
+| :--- | :--- |
+| **`Sono`** | Monitoramento de descanso e recuperação cognitiva. Essencial para detectar privação de sono. |
+| **`Trabalho`** | Monitoramento de carga horária produtiva. Usado para calcular risco de Burnout e estresse. |
+| **`Lazer`** | Tempo dedicado a hobbies e desconexão. Usado para medir qualidade de vida e saúde mental. |
+| **`Exercício`** | Atividade física. Fator de proteção contra sedentarismo e regulador de humor. |
+
+### 2. Validação de Horas
+* **Mínimo:** 0.1 hora (6 minutos).
+* **Máximo:** 24 horas por registro.
+
+---
+
 ##  Arquitetura e Decisões de Design
 
 Este diagrama ilustra os principais componentes da solução e o fluxo de dados.

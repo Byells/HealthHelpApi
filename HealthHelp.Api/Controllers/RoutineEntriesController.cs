@@ -117,7 +117,8 @@ namespace HealthHelp.Api.Controllers
         [HttpPost]
         [SwaggerOperation(
             Summary = "Criar nova rotina",
-            Description = "Adiciona um novo registro de atividade (ex: 8 horas de sono, 2 horas de lazer) à rotina do usuário."
+            Description = "Adiciona um novo registro de atividade à rotina do usuário. \n\n" +
+                          "⚠️ **Categorias Permitidas:** 'Sono', 'Trabalho', 'Lazer', 'Exercício'."
         )]
         [SwaggerResponse(201, "Registro criado com sucesso", typeof(RoutineEntryDto))]
         [SwaggerResponse(400, "Dados inválidos (ex: campos obrigatórios faltando)")]
