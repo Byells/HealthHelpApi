@@ -84,7 +84,14 @@ namespace HealthHelp.Api.Controllers
                 return Ok(new
                 {
                     token = $"Bearer {new JwtSecurityTokenHandler().WriteToken(token)}",
-                    expiration = token.ValidTo
+                    expiration = token.ValidTo,
+                    user = new 
+                    {
+                        id = user.Id,
+                        name = user.Name,
+                        email = user.Email,
+                        dateOfBirth = user.DateOfBirth
+                    }
                 });
             }
 
