@@ -1,8 +1,15 @@
 # HealthHelp API 
 
-API RESTful desenvolvida em .NET 8 para a plataforma HealthHelp, um sistema de monitoramento de bem-estar e análise de rotina focado em prevenção de burnout e equilíbrio entre vida pessoal e profissional.
+## Descrição da solução
 
-Projeto desenvolvido como parte da avaliação da disciplina de **Enterprise Application Development**.
+HealthHelp: Monitoramento Inteligente de Bem-Estar
+O HealthHelp é uma solução integrada de software desenvolvida para auxiliar no combate ao esgotamento físico e mental (burnout) e promover o equilíbrio entre vida pessoal e profissional.
+
+O Problema: Em um cenário onde a rotina moderna é muitas vezes caótica, é difícil para o indivíduo perceber padrões nocivos — como excesso de trabalho ou privação de sono — antes que eles se tornem problemas de saúde reais.
+
+A Solução: O aplicativo atua como um "diário inteligente". O usuário registra suas atividades diárias divididas em quatro pilares fundamentais: Sono, Trabalho, Lazer e Exercício. Diferente de um simples bloco de notas, o HealthHelp processa esses dados para gerar insights de valor.
+
+Como Funciona a Inteligência: O coração do sistema é um Sistema Especialista (IA Heurística) hospedado na API. Este motor de regras analisa o histórico recente do usuário (médias de comportamento, consistência e volumes) para identificar arquétipos de rotina. Em vez de apenas mostrar gráficos, o sistema diagnostica o perfil atual do usuário — por exemplo, "Padrão Workaholic" (muito trabalho/pouco lazer) ou "Risco Sedentário" — e fornece uma Nota de Equilíbrio (0 a 100) junto com dicas práticas e personalizadas para melhorar a qualidade de vida naquele momento específico.
 
 ---
 
@@ -46,7 +53,7 @@ O sistema aceita apenas quatro categorias fundamentais para compor a "Roda da Vi
 | **`Exercício`** | Atividade física. Fator de proteção contra sedentarismo e regulador de humor. |
 
 ### 2. Validação de Horas
-* **Mínimo:** 0.1 hora (6 minutos).
+* **Mínimo:** 00:01 hora (1 minuto).
 * **Máximo:** 24 horas por registro.
 
 ---
@@ -125,13 +132,13 @@ A arquitetura foi pensada para que seja algo simples porém que consegue ajudar 
 ### 1. Clone o Repositório
 
 ```bash
-git clone https://github.com/SEU_USUARIO/HealthHelp.git
-cd HealthHelp
+git clone https://github.com/Byells/HealthHelpApi.git
+cd HealthHelp.Api
 ```
 
 ### 2. Configuração
 
-Crie/Edite o arquivo `appsettings.Development.json` no projeto HealthHelp.Api com sua string de conexão Oracle e chave JWT:
+Crie o arquivo `appsettings.Development.json` no projeto HealthHelp.Api com a string de conexão Oracle e chave JWT:
 
 ```json
 {
@@ -140,8 +147,8 @@ Crie/Edite o arquivo `appsettings.Development.json` no projeto HealthHelp.Api co
   },
   "JWT": {
     "Key": "CHAVE_JWT",
-    "Issuer": "healthhelp-api",
-    "Audience": "healthhelp-app"
+    "Issuer": "https://localhost:7001",
+    "Audience": "https://localhost:7001"
   }
 }
 ```
@@ -162,7 +169,7 @@ dotnet ef database update --project HealthHelp.Api
 dotnet run --project HealthHelp.Api
 ```
 
-Acesse o Swagger em: `https://localhost:7000/swagger` (ou a porta indicada no terminal).
+Acesse o Swagger em: `https://localhost:44394/swagger/index.html` ou pelo link da Azure: `https://healthhelp-bce6amfkbtfkesa4.brazilsouth-01.azurewebsites.net/swagger/index.html`
 
 ---
 
@@ -204,5 +211,7 @@ Todos os endpoints (exceto Auth e Health) exigem o header `Authorization: Bearer
 - `GET /health` - Status da API e conexão com Oracle
 
 ---
+
+### [Vídeo demonstração](https://youtu.be/Aj1V5F-_kzU)
 
 - API feita para a Global Solution 2025/2
